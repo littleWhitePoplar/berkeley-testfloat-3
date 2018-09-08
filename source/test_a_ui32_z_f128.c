@@ -66,9 +66,9 @@ void
     count = 10000;
     while ( ! genCases_done || testLoops_forever ) {
         genCases_ui32_a_next();
-        *testLoops_trueFlagsPtr = 0;
+        testLoops_trueFlagsFunction();
         trueFunction( genCases_ui32_a, &trueZ );
-        trueFlags = *testLoops_trueFlagsPtr;
+        trueFlags = testLoops_trueFlagsFunction();
         testLoops_subjFlagsFunction();
         subjFunction( genCases_ui32_a, &subjZ );
         subjFlags = testLoops_subjFlagsFunction();

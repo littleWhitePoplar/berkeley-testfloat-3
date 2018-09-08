@@ -69,9 +69,9 @@ void
     count = 10000;
     while ( ! genCases_done || testLoops_forever ) {
         genCases_f16_a_next();
-        *testLoops_trueFlagsPtr = 0;
+        testLoops_trueFlagsFunction();
         trueZ = trueFunction( genCases_f16_a, roundingMode, exact );
-        trueFlags = *testLoops_trueFlagsPtr;
+        trueFlags = testLoops_trueFlagsFunction();
         testLoops_subjFlagsFunction();
         subjZ = subjFunction( genCases_f16_a, roundingMode, exact );
         subjFlags = testLoops_subjFlagsFunction();

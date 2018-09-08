@@ -886,6 +886,15 @@ void
 
 }
 
+static uint_fast8_t clearExceptionFlags( void )
+{
+    uint_fast8_t prevFlags;
+
+    prevFlags = slowfloat_exceptionFlags;
+    slowfloat_exceptionFlags = 0;
+    return prevFlags;
+}
+
 int main( int argc, char *argv[] )
 {
     bool haveFunctionArg;
@@ -903,7 +912,7 @@ int main( int argc, char *argv[] )
     if ( argc <= 1 ) goto writeHelpMessage;
     genCases_setLevel( 1 );
     verCases_maxErrorCount = 20;
-    testLoops_trueFlagsPtr = &slowfloat_exceptionFlags;
+    testLoops_trueFlagsFunction = clearExceptionFlags;
     testLoops_subjFlagsFunction = softfloat_clearExceptionFlags;
     haveFunctionArg = false;
     functionCode = 0;

@@ -78,10 +78,10 @@ void
     count = 10000;
     while ( ! genCases_done || testLoops_forever ) {
         genCases_f128_abc_next();
-        *testLoops_trueFlagsPtr = 0;
+        testLoops_trueFlagsFunction();
         trueFunction(
             &genCases_f128_a, &genCases_f128_b, &genCases_f128_c, &trueZ );
-        trueFlags = *testLoops_trueFlagsPtr;
+        trueFlags = testLoops_trueFlagsFunction();
         testLoops_subjFlagsFunction();
         subjFunction(
             &genCases_f128_a, &genCases_f128_b, &genCases_f128_c, &subjZ );

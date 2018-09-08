@@ -62,9 +62,9 @@ void
     count = 10000;
     while ( ! genCases_done || testLoops_forever ) {
         genCases_i32_a_next();
-        *testLoops_trueFlagsPtr = 0;
+        testLoops_trueFlagsFunction();
         trueZ = trueFunction( genCases_i32_a );
-        trueFlags = *testLoops_trueFlagsPtr;
+        trueFlags = testLoops_trueFlagsFunction();
         testLoops_subjFlagsFunction();
         subjZ = subjFunction( genCases_i32_a );
         subjFlags = testLoops_subjFlagsFunction();

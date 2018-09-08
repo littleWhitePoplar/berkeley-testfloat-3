@@ -42,7 +42,7 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 extern bool testLoops_forever;
 
-extern uint_fast8_t *testLoops_trueFlagsPtr;
+extern uint_fast8_t (*testLoops_trueFlagsFunction)( void );
 extern uint_fast8_t (*testLoops_subjFlagsFunction)( void );
 
 /*----------------------------------------------------------------------------

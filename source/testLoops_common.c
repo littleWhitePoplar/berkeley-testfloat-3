@@ -42,6 +42,6 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 bool testLoops_forever = false;
 
-uint_fast8_t *testLoops_trueFlagsPtr;
+uint_fast8_t (*testLoops_trueFlagsFunction)( void );
 uint_fast8_t (*testLoops_subjFlagsFunction)( void );
 
